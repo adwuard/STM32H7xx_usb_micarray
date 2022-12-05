@@ -26,7 +26,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include  "usbd_ioreq.h"
-
+#include  "USB_Audio_Port.h"
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
   */
@@ -169,115 +169,6 @@ typedef struct
   int8_t (*PeriodicTC)(uint8_t *pbuf, uint32_t size, uint8_t cmd);
   int8_t (*GetState)(void);
 } USBD_AUDIO_ItfTypeDef;
-
-/*
- * Audio Class specification release 1.0
- */
-
-/* Table 4-2: Class-Specific AC Interface Header Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint16_t          bcdADC;
-  uint16_t          wTotalLength;
-  uint8_t           bInCollection;
-  uint8_t           baInterfaceNr;
-} __PACKED USBD_SpeakerIfDescTypeDef;
-
-/* Table 4-3: Input Terminal Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint8_t           bTerminalID;
-  uint16_t          wTerminalType;
-  uint8_t           bAssocTerminal;
-  uint8_t           bNrChannels;
-  uint16_t          wChannelConfig;
-  uint8_t           iChannelNames;
-  uint8_t           iTerminal;
-} __PACKED USBD_SpeakerInDescTypeDef;
-
-/* USB Speaker Audio Feature Unit Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint8_t           bUnitID;
-  uint8_t           bSourceID;
-  uint8_t           bControlSize;
-  uint16_t          bmaControls;
-  uint8_t           iTerminal;
-} __PACKED USBD_SpeakerFeatureDescTypeDef;
-
-/* Table 4-4: Output Terminal Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint8_t           bTerminalID;
-  uint16_t          wTerminalType;
-  uint8_t           bAssocTerminal;
-  uint8_t           bSourceID;
-  uint8_t           iTerminal;
-} __PACKED USBD_SpeakerOutDescTypeDef;
-
-/* Table 4-19: Class-Specific AS Interface Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint8_t           bTerminalLink;
-  uint8_t           bDelay;
-  uint16_t          wFormatTag;
-} __PACKED USBD_SpeakerStreamIfDescTypeDef;
-
-/* USB Speaker Audio Type III Format Interface Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptorSubtype;
-  uint8_t           bFormatType;
-  uint8_t           bNrChannels;
-  uint8_t           bSubFrameSize;
-  uint8_t           bBitResolution;
-  uint8_t           bSamFreqType;
-  uint8_t           tSamFreq2;
-  uint8_t           tSamFreq1;
-  uint8_t           tSamFreq0;
-} USBD_SpeakerIIIFormatIfDescTypeDef;
-
-/* Table 4-17: Standard AC Interrupt Endpoint Descriptor */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bEndpointAddress;
-  uint8_t           bmAttributes;
-  uint16_t          wMaxPacketSize;
-  uint8_t           bInterval;
-  uint8_t           bRefresh;
-  uint8_t           bSynchAddress;
-} __PACKED USBD_SpeakerEndDescTypeDef;
-
-/* Table 4-21: Class-Specific AS Isochronous Audio Data Endpoint Descriptor        */
-typedef struct
-{
-  uint8_t           bLength;
-  uint8_t           bDescriptorType;
-  uint8_t           bDescriptor;
-  uint8_t           bmAttributes;
-  uint8_t           bLockDelayUnits;
-  uint16_t          wLockDelay;
-} __PACKED USBD_SpeakerEndStDescTypeDef;
-
 /**
   * @}
   */

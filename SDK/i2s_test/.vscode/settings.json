@@ -1,0 +1,15 @@
+{
+    "stm32-for-vscode.openOCDPath": false,
+    "files.associations": {
+        "*.m": "matlab",
+        "main.h": "c",
+        "usb_device.h": "c",
+        "stm32h7xx_hal.h": "c",
+        "retarget.h": "c",
+        "usbd_audio.h": "c",
+        "string.h": "c",
+        "usb_audio_port.h": "c",
+        "stdio.h": "c",
+        "usbd_def.h": "c"
+    }
+}

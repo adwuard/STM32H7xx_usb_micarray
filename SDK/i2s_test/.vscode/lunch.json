@@ -1,0 +1,22 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "executable": "./build/i2s_test.elf",   //elf文件看当前工程名称或是看build文件夹下的elf文件名称
+            "cwd": "${workspaceRoot}",
+            "servertype": "openocd",
+            "device":"STM32F103ZE",    //当前芯片型号
+            "interface":"swd",
+            "configFiles":[
+                "C:/openocd/scripts/interface/stlink-v2.cfg",    //使用ST-LINK
+                "c:/openocd/scripts/target/stm32f1x.cfg",       //根据芯片型号更改/stm32f1x.cfg
+            ]
+        }
+    ]
+}
