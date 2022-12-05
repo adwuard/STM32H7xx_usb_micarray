@@ -35,9 +35,7 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
-
-#define MONO_FRAME_SIZE                       128
-#define STEREO_FRAME_SIZE                     (MONO_FRAME_SIZE*2U)  /* USER CODE BEGIN ET */
+/* USER CODE BEGIN ET */
 
 
 /* USER CODE END ET */
@@ -49,6 +47,8 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+#define MONO_FRAME_SIZE                       128
+#define STEREO_FRAME_SIZE                     (MONO_FRAME_SIZE*2U)  /* USER CODE BEGIN ET */
 
 /* USER CODE END EM */
 
