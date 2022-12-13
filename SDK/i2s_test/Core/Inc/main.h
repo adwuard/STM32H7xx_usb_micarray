@@ -37,6 +37,7 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -46,6 +47,8 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
+#define MONO_FRAME_SIZE                       128
+#define STEREO_FRAME_SIZE                     (MONO_FRAME_SIZE*2U)  /* USER CODE BEGIN ET */
 
 /* USER CODE END EM */
 
@@ -61,6 +64,7 @@ void Error_Handler(void);
 #define LED_GPIO_Port GPIOE
 #define K1_Pin GPIO_PIN_13
 #define K1_GPIO_Port GPIOC
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
